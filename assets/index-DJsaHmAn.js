@@ -78,10 +78,9 @@
       <div class="ft ft-end">${i}</div>
     </div>
     ${o}
-  </article>`}function U(e,t){let n=te(e,t),r=/^(\d+) 分鐘$/.exec(n);return r?{num:r[1],unit:`分鐘`}:{num:n,unit:``}}function W(e,t,n){let r=Date.now(),i=n.items.map(e=>{let t=U(e.eta,r),n=t.unit?`<span>${b(t.unit)}</span>`:``,i=e.remarkTc?`<p class="remark">${b(e.remarkTc)}</p>`:``;return`<div class="eta">
-        <p class="mins"><b>${b(t.num)}</b>${n}</p>
-        <p class="clock">${b(x(e.eta))}</p>
-        <p class="raw">${b(e.eta)}</p>
+  </article>`}function U(e,t){let n=te(e,t),r=/^(\d+) 分鐘$/.exec(n);return r?{num:r[1],unit:`分鐘`}:{num:n,unit:``}}function W(e,t,n){let r=Date.now(),i=n.items.map(e=>{let t=U(e.eta,r),n=t.unit?`<span>${b(t.unit)}</span>`:``,i=e.remarkTc?`<span class="remark">${b(e.remarkTc)}</span>`:``;return`<div class="eta">
+        <span class="mins"><b>${b(t.num)}</b>${n}</span>
+        <span class="clock">${b(x(e.eta))}</span>
         ${i}
       </div>`}).join(``),a=n.error?`<p class="empty" data-empty="1">${b(n.error)}</p>`:n.items.length===0?`<p class="empty" data-empty="1">暫無班次</p>`:`<div class="eta-list">${i}</div>`,o=n.dataTimestamp?`<p class="stamp">資料時間 ${b(n.dataTimestamp)}</p>`:``;return`<div class="ft-body">
     <p class="ft-k">${e}</p>
